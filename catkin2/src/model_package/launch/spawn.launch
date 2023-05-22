@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	<arg name="world_name" value="/home/vitaliy/catkin2/src/model_package/world/lab2_wrld.sdf"/>
+</include>
+	
+	
+    <param name="robot_description" command="cat '/home/vitaliy/catkin2/src/model_package/urdf/rosbots.xacro'" />
+ 
+    <arg name="x" default="0"/>
+    <arg name="y" default="0"/>
+    <arg name="z" default="0.5"/>
+ 
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+          args="-urdf -param robot_description -model rosbots -x $(arg x) -y $(arg y) -z $(arg z)" /> 
+</launch>

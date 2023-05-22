@@ -1,0 +1,8 @@
+prefix=/home/vitaliy/catkin2/install
+
+Name: model_package
+Description: Description of model_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
